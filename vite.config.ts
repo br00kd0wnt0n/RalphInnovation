@@ -6,5 +6,3 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
 })
-// Build trigger: 1768340256
-// Rebuild: 1768341386
