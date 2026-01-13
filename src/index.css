@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #0a0a0f;
+  --color-bg-card: #12121a;
+  --color-bg-card-hover: #1a1a24;
+  --color-accent-pink: #E91E8C;
+  --color-accent-cyan: #00CED1;
+  --color-accent-yellow: #CCFF00;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #888888;
+  --color-text-muted: #555555;
+  --color-border-default: #2a2a35;
+
+  --font-display: 'Inter', sans-serif;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: var(--font-display);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .gradient-border {
+    position: relative;
+    background: var(--color-bg-card);
+    border-radius: 1rem;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 1rem;
+    padding: 1px;
+    background: linear-gradient(135deg, var(--color-accent-pink), var(--color-accent-cyan));
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .gradient-border:hover::before {
+    opacity: 1;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-accent-pink), var(--color-accent-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-pink {
+    box-shadow: 0 0 40px rgba(233, 30, 140, 0.3);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 40px rgba(0, 206, 209, 0.3);
+  }
+
+  .card-glow {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .card-glow:hover {
+    box-shadow: 0 0 30px rgba(233, 30, 140, 0.15), 0 0 60px rgba(0, 206, 209, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .glassmorphism {
+    background: rgba(18, 18, 26, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .status-live {
+    background: linear-gradient(135deg, var(--color-accent-cyan), #00a8ab);
+  }
+
+  .status-testing {
+    background: linear-gradient(135deg, var(--color-accent-yellow), #a8cc00);
+  }
+
+  .status-prototype {
+    background: linear-gradient(135deg, var(--color-accent-pink), #b8157a);
+  }
+
+  .status-sold {
+    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+  }
+
+  .status-pitch {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+  }
+
+  .status-concept {
+    background: linear-gradient(135deg, #E91E8C, #00CED1);
+  }
+
+  .status-planned {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+  }
+
+  .status-negotiation {
+    background: linear-gradient(135deg, #1abc9c, #16a085);
+  }
+
+  /* Roadmap cards - distinct styling */
+  .roadmap-card {
+    border: 2px dashed rgba(233, 30, 140, 0.4) !important;
+    opacity: 0.85;
+    background: linear-gradient(135deg, rgba(18, 18, 26, 0.8), rgba(18, 18, 26, 0.95)) !important;
+  }
+
+  .roadmap-card:hover {
+    opacity: 1;
+    border-color: rgba(233, 30, 140, 0.8) !important;
+  }
+
+  .roadmap-card::before {
+    background: linear-gradient(135deg, #E91E8C, #00CED1) !important;
+    opacity: 0.3 !important;
+  }
+
+  .roadmap-card:hover::before {
+    opacity: 0.6 !important;
+  }
+
+  .roadmap-badge {
+    background: linear-gradient(135deg, #E91E8C, #00CED1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-default);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
