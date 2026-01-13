@@ -8,6 +8,8 @@ import {
   Zap,
   Target,
   ArrowRight,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
 import type { Project } from '../data/projects';
 import { categoryColors, capabilityLabels, themeLabels } from '../data/categories';
@@ -16,12 +18,46 @@ import { getProjectConnections } from '../data/relationships';
 interface ExpandedCardProps {
   project: Project;
   onClose: () => void;
+  allProjects?: Project[];
+  onNavigate?: (projectId: string) => void;
 }
 
-export function ExpandedCard({ project, onClose }: ExpandedCardProps) {
+export function ExpandedCard({ project, onClose, allProjects = [], onNavigate }: ExpandedCardProps) {
+  // Navigation
+  const currentIndex = allProjects.findIndex(p => p.id === project.id);
+  const hasPrev = currentIndex > 0;
+  const hasNext = currentIndex < allProjects.length - 1;
+
+  const goToPrev = () => {
+    if (hasPrev && onNavigate) {
+      onNavigate(allProjects[currentIndex - 1].id);
+    }
+  };
+
+  const goToNext = () => {
+    if (hasNext && onNavigate) {
+      onNavigate(allProjects[currentIndex + 1].id);
+    }
+  };
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') goToPrev();
+      if (e.key === 'ArrowRight') goToNext();
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [currentIndex, allProjects.length]);
   const categoryColor = categoryColors[project.category];
   const connections = getProjectConnections(project.id);
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Reset slide when project changes
+  useEffect(() => {
+    setCurrentSlide(0);
+  }, [project.id]);
 
   // Get images grouped into pairs for the carousel
   const images = project.images || [];
@@ -60,6 +96,34 @@ export function ExpandedCard({ project, onClose }: ExpandedCardProps) {
           exit={{ opacity: 0 }}
           className="absolute inset-0 bg-bg-primary/90 backdrop-blur-sm"
         />
+
+        {/* Navigation Chevrons */}
+        {allProjects.length > 1 && (
+          <>
+            <button
+              onClick={(e) => { e.stopPropagation(); goToPrev(); }}
+              disabled={!hasPrev}
+              className={`absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-bg-card border border-border-default transition-all ${
+                hasPrev
+                  ? 'text-text-primary hover:bg-bg-card-hover hover:border-accent-pink cursor-pointer'
+                  : 'text-text-muted/30 cursor-not-allowed'
+              }`}
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); goToNext(); }}
+              disabled={!hasNext}
+              className={`absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-bg-card border border-border-default transition-all ${
+                hasNext
+                  ? 'text-text-primary hover:bg-bg-card-hover hover:border-accent-pink cursor-pointer'
+                  : 'text-text-muted/30 cursor-not-allowed'
+              }`}
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </>
+        )}
 
         {/* Modal */}
         <motion.div

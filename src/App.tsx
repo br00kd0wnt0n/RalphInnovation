@@ -86,7 +86,12 @@ function App() {
 
       {/* Expanded Project Modal (from visualization clicks) */}
       {selectedProject && (
-        <ExpandedCard project={selectedProject} onClose={handleCloseExpanded} />
+        <ExpandedCard
+          project={selectedProject}
+          onClose={handleCloseExpanded}
+          allProjects={projects}
+          onNavigate={handleProjectSelect}
+        />
       )}
     </div>
   );
