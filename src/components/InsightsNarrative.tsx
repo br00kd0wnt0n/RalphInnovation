@@ -81,7 +81,7 @@ export function InsightsNarrative() {
           transition={{ delay: 0.2 }}
           className="grid md:grid-cols-3 gap-6 mb-12"
         >
-          {pillars.map(({ icon: Icon, title, description }, index) => (
+          {pillars.map(({ icon: Icon, title, description }) => (
             <div
               key={title}
               className="p-6 bg-bg-primary rounded-xl border border-border-default"
