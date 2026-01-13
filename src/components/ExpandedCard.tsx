@@ -103,7 +103,7 @@ export function ExpandedCard({ project, onClose, allProjects = [], onNavigate }:
             <button
               onClick={(e) => { e.stopPropagation(); goToPrev(); }}
               disabled={!hasPrev}
-              className={`absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-bg-card border border-border-default transition-all ${
+              className={`fixed left-4 md:left-8 top-1/2 -translate-y-1/2 z-[60] p-3 rounded-full bg-bg-card border border-border-default shadow-lg transition-all ${
                 hasPrev
                   ? 'text-text-primary hover:bg-bg-card-hover hover:border-accent-pink cursor-pointer'
                   : 'text-text-muted/30 cursor-not-allowed'
@@ -114,7 +114,7 @@ export function ExpandedCard({ project, onClose, allProjects = [], onNavigate }:
             <button
               onClick={(e) => { e.stopPropagation(); goToNext(); }}
               disabled={!hasNext}
-              className={`absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-bg-card border border-border-default transition-all ${
+              className={`fixed right-4 md:right-8 top-1/2 -translate-y-1/2 z-[60] p-3 rounded-full bg-bg-card border border-border-default shadow-lg transition-all ${
                 hasNext
                   ? 'text-text-primary hover:bg-bg-card-hover hover:border-accent-pink cursor-pointer'
                   : 'text-text-muted/30 cursor-not-allowed'
