@@ -9,6 +9,8 @@ import { VisualizationTabs } from './components/VisualizationTabs';
 import { VisionModule } from './components/VisionModule';
 import { ExpandedCard } from './components/ExpandedCard';
 import { ScreengrabMosaic } from './components/ScreengrabMosaic';
+import { BiggerPicture } from './components/BiggerPicture';
+import { InsightsNarrative } from './components/InsightsNarrative';
 import { useFilter } from './hooks/useFilter';
 import { useSearchState } from './hooks/useSearch';
 import { projects } from './data/projects';
@@ -72,6 +74,12 @@ function App() {
 
       {/* 2026 Vision Module */}
       <VisionModule />
+
+      {/* Ralph Insights Narrative */}
+      <InsightsNarrative />
+
+      {/* Bigger Picture */}
+      <BiggerPicture />
 
       {/* Footer */}
       <Footer />
