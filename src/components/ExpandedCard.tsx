@@ -96,7 +96,7 @@ export function ExpandedCard({ project, onClose }: ExpandedCardProps) {
                 </span>
                 <span className="text-xs text-text-muted flex items-center gap-1">
                   <Calendar className="w-3 h-3" />
-                  {project.quarter} 2025
+                  {project.quarter} {project.startDate?.startsWith('2026') ? '2026' : '2025'}
                 </span>
               </div>
 
