@@ -98,7 +98,7 @@ export function ExpandedCard({ project, onClose, allProjects = [], onNavigate }:
         />
 
         {/* Navigation Chevrons */}
-        {allProjects.length > 1 && (
+        {allProjects && allProjects.length > 0 && (
           <>
             <button
               onClick={(e) => { e.stopPropagation(); goToPrev(); }}

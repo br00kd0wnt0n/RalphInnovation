@@ -14,6 +14,7 @@ export function VisionModule() {
       icon: Lightbulb,
       color: 'accent-cyan',
       tools: ['Ralph Narrativ', 'Ralph Loves Trends', 'Unified Dashboard'],
+      image: '/screengrabs/Narrativ1.png',
     },
     {
       phase: '02',
@@ -23,6 +24,7 @@ export function VisionModule() {
       icon: Users,
       color: 'accent-pink',
       tools: ['Ralph Voices', 'Creator Rolodex', 'GWI Integration'],
+      image: '/screengrabs/Voices1.png',
     },
     {
       phase: '03',
@@ -32,6 +34,7 @@ export function VisionModule() {
       icon: BarChart3,
       color: 'accent-yellow',
       tools: ['Care Bears Dashboard', 'HayStack Dashboard', 'Forecasting Engine'],
+      image: '/screengrabs/HayStack1.png',
     },
   ];
 
@@ -110,6 +113,17 @@ export function VisionModule() {
                     <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg bg-${phase.color}/10 mb-4`}>
                       <phase.icon className={`w-6 h-6 text-${phase.color}`} />
                     </div>
+
+                    {/* Screengrab */}
+                    {phase.image && (
+                      <div className="mb-4 -mx-2">
+                        <img
+                          src={phase.image}
+                          alt={phase.subtitle}
+                          className="w-full rounded-lg border border-border-default"
+                        />
+                      </div>
+                    )}
 
                     {/* Title */}
                     <h3 className="text-xl font-bold text-text-primary mb-1">
