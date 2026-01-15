@@ -135,19 +135,6 @@ export function InsightsNarrative() {
           </div>
         </motion.div>
 
-        {/* Closing Statement */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="text-center mt-12 pt-8 border-t border-border-default"
-        >
-          <p className="text-lg text-text-primary italic max-w-2xl mx-auto">
-            "Innovation isn't a side project at Ralph  - it's becoming the foundation
-            of how we work."
-          </p>
-        </motion.div>
       </div>
     </section>
   );
