@@ -51,7 +51,7 @@ export function InsightsNarrative() {
           className="space-y-6 mb-12"
         >
           <p className="text-text-primary text-lg leading-relaxed">
-            Over the past year, Ralph's Innovation practice has built something unique:
+            Ralph's Innovation practice has built something unique:
             <span className="text-accent-pink font-medium"> a connected ecosystem of intelligence tools</span> designed
             specifically for entertainment marketing. These aren't off-the-shelf solutions  - they're
             proprietary systems that give our teams (and our clients) capabilities no one else has.
