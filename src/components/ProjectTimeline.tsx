@@ -71,7 +71,6 @@ export function ProjectTimeline({ onProjectSelect }: ProjectTimelineProps) {
       'BD-1 Wavelength': 'BD-1 Wavelength',
       'Squawk FM': 'Squawk FM',
       'BeReal AR Test': 'BeReal AR',
-      'Circles': 'Circles',
       'CareBears Product': 'CareBears Product',
       'Haystack': 'Haystack',
     };

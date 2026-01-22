@@ -647,62 +647,6 @@ Testing web-based AR for potential client applications.`,
     endDate: '2025-09',
   },
 
-  // 2026 Roadmap - Experimental
-  {
-    id: 'circles',
-    name: 'Circles',
-    tagline: 'Social Availability for Families',
-    category: '2026 Roadmap',
-    status: 'Prototyping',
-    isRoadmap: true,
-    liveUrl: 'https://circles-proto.up.railway.app/',
-    description: 'A social availability app for families and friend groups. Share status, see what friends are up to, and organize local hangouts — all without the friction of group text chains.',
-    tags: ['Consumer App', 'Social', 'Mobile', 'Spin-off'],
-    poweredBy: ['React', 'Railway'],
-    recap2025: `Personal project that became a convergence point for multiple innovation threads.
-
-V1 Prototype (Complete):
-• Core UI with floaty, minimalist aesthetic
-• Household and friends data model
-• Three-state availability system (Available, Open to plans, Busy)
-• Friends status feed - the "what's everyone up to" view
-• Local activity suggestions (Hudson Valley focused)
-• Hangout creation and invitation flow
-• localStorage persistence for testing
-
-V2 (Current Focus) - Refined UI/UX:
-• Extensively refined interface and interaction design
-• Polished visual system with soft, modern aesthetic
-• Streamlined user flows for status sharing and hangout creation
-• Mobile-first responsive design
-• Focus on feel and usability over technical complexity`,
-    vision2026: `Product Development:
-• Complete V2 with polished UI/UX
-• Real backend with authentication and real-time sync
-• Push notifications and calendar integration
-• Weather-aware activity recommendations
-• Beta test with actual friend groups in Hudson Valley
-
-Strategic Opportunity:
-• PR-able consumer product showcasing innovation capability
-• Potential spin-off or investment opportunity
-• Case study for "Ralph builds products" narrative
-• Demonstrates full-stack consumer app development
-
-Ralph Relevance:
-• Template for community/fandom connection tools
-• Applies "Circles" thinking to brand audiences and creator communities
-• Tests consumer app distribution and growth strategies`,
-    capabilities: ['consumer-ux', 'data-architecture'],
-    dataFlowsTo: [],
-    buildsOn: ['creator-rolodex'],
-    themes: ['audience-connection', 'data-ownership'],
-    techStack: ['React', 'Railway'],
-    quarter: 'Q1',
-    startDate: '2026-01',
-    endDate: 'ongoing',
-  },
-
   // 2026 Roadmap Projects
   {
     id: 'ralph-voices',
