@@ -5,7 +5,7 @@ export type Category =
   | 'Client Work'
   | '2026 Roadmap';
 
-export type Status = 'Live' | 'Testing' | 'Prototype' | 'Sold' | 'Pitch Tool' | 'Prototyping' | 'Concept' | 'Planned' | 'In Negotiation';
+export type Status = 'Live' | 'Testing' | 'Prototype' | 'Sold' | 'Pitch Tool' | 'Prototyping' | 'WIP' | 'Concept' | 'Planned' | 'In Negotiation';
 
 export type Capability =
   | 'ai-integration'
@@ -43,6 +43,7 @@ export const statusColors: Record<Status, string> = {
   'Testing': 'status-testing',
   'Prototype': 'status-prototype',
   'Prototyping': 'status-prototype',
+  'WIP': 'status-prototype',
   'Sold': 'status-sold',
   'Pitch Tool': 'status-pitch',
   'Concept': 'status-concept',

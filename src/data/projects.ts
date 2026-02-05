@@ -652,10 +652,10 @@ Testing web-based AR for potential client applications.`,
     id: 'ralph-voices',
     name: 'Ralph Voices',
     tagline: 'Synthetic Audience Intelligence',
-    category: '2026 Roadmap',
-    status: 'Prototyping',
+    category: 'Commercial Products',
+    status: 'Live',
     liveUrl: 'https://ralphvoices.up.railway.app/',
-    images: ['/screengrabs/Voices1.png'],
+    images: ['/screengrabs/Voices1.png', '/screengrabs/Voices2.png'],
     description: 'AI-powered synthetic personas calibrated to specific audiences. Stress-test creative concepts before they reach real people.',
     tags: ['AI', 'Research', 'Personas', 'Testing'],
     poweredBy: ['OpenAI', 'GWI Data', 'Custom Models'],
@@ -675,13 +675,46 @@ Use Cases:
 • Asset review and optimization
 • A/B testing without real audience exposure
 
-Dependencies: GWI API access, persona modeling framework, validation testing
-Target: Q2 2026`,
+Dependencies: GWI API access, persona modeling framework, validation testing`,
     capabilities: ['ai-integration', 'data-architecture'],
     dataFlowsTo: [],
     buildsOn: ['ralph-narrativ', 'care-bears-dashboard', 'creator-rolodex'],
     themes: ['audience-connection', 'data-ownership', 'brand-storytelling'],
     techStack: ['OpenAI', 'GWI', 'React'],
+    quarter: 'Q1',
+    startDate: '2026-01',
+    endDate: 'ongoing',
+  },
+  {
+    id: 'frequency',
+    name: 'FREQUENCY',
+    tagline: 'AI-Powered Interactive Radio Narrative',
+    category: '2026 Roadmap',
+    status: 'WIP',
+    liveUrl: 'https://frequencyclient.up.railway.app/',
+    images: ['/screengrabs/Frequency1.png', '/screengrabs/Frequency2.png'],
+    description: 'A new format for interactive storytelling where players explore narratives through a simulated radio interface — scanning frequencies, decoding signals, and building relationships with AI-driven characters through voice conversation.',
+    tags: ['AI', 'Audio', 'Narrative', 'Interactive', 'Voice'],
+    poweredBy: ['OpenAI GPT-4', 'ElevenLabs', 'Web Audio API', 'WebSockets'],
+    recap2025: `Concept developed and prototype built:
+• Simulated radio interface with frequency dial, signal meter, push-to-talk
+• AI-driven characters with distinct personalities via LLM-powered dialogue
+• Real-time voice synthesis with radio-authentic audio processing
+• Notebook system for logging frequencies, contacts, and decoded messages
+• Morse code and number station signal generation
+• Trust system where characters remember interactions and unlock new frequencies
+• Mystery web narrative where multiple characters hold pieces of the truth`,
+    vision2026: `• Stranger Things IP application — players intercept ham radio transmissions between Dustin and Suzie
+• Educational integration with Outschool ("Cerebro Academy") for morse code, cryptography, radio science
+• Platform adapts to any universe with radio/communication lore
+• Wider spectrum unlocks, more characters, collaborative advancement
+• Secondary device/display functionality
+• Same engine, different stories — build once, deploy across franchises`,
+    capabilities: ['ai-integration', 'interactive-visuals', 'real-time-streaming', 'consumer-ux'],
+    dataFlowsTo: [],
+    buildsOn: [],
+    themes: ['entertainment-infrastructure', 'audience-connection'],
+    techStack: ['React', 'TypeScript', 'Node.js', 'WebSockets', 'OpenAI', 'ElevenLabs', 'Web Audio API', 'PostgreSQL'],
     quarter: 'Q1',
     isRoadmap: true,
     startDate: '2026-01',

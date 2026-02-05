@@ -13,7 +13,6 @@ export function VisionModule() {
       description: 'Generate and refine creative concepts through AI-powered storytelling intelligence, trend analysis, and strategic frameworks.',
       icon: Lightbulb,
       color: 'accent-cyan',
-      tools: ['Ralph Narrativ', 'Ralph Loves Trends', 'Unified Dashboard'],
       image: '/screengrabs/Narrativ1.png',
     },
     {
@@ -23,7 +22,6 @@ export function VisionModule() {
       description: 'Stress-test ideas with synthetic audience personas calibrated to specific demographics before real-world exposure.',
       icon: Users,
       color: 'accent-pink',
-      tools: ['Ralph Voices', 'Creator Rolodex', 'GWI Integration'],
       image: '/screengrabs/Voices1.png',
     },
     {
@@ -33,7 +31,6 @@ export function VisionModule() {
       description: 'Track performance, forecast outcomes, and optimize campaigns with predictive analytics and real-time intelligence.',
       icon: BarChart3,
       color: 'accent-yellow',
-      tools: ['Care Bears Dashboard', 'HayStack Dashboard', 'Forecasting Engine'],
       image: '/screengrabs/HayStack1.png',
     },
   ];
@@ -134,26 +131,9 @@ export function VisionModule() {
                     </div>
 
                     {/* Description */}
-                    <p className="text-text-secondary text-sm mb-4">
+                    <p className="text-text-secondary text-sm">
                       {phase.description}
                     </p>
-
-                    {/* Tools */}
-                    <div className="pt-4 border-t border-border-default">
-                      <div className="text-xs text-text-muted uppercase tracking-wider mb-2">
-                        Key Tools
-                      </div>
-                      <div className="flex flex-wrap gap-1">
-                        {phase.tools.map((tool) => (
-                          <span
-                            key={tool}
-                            className="text-xs px-2 py-1 rounded-md bg-bg-card text-text-secondary"
-                          >
-                            {tool}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
                   </div>
                 </motion.div>
               ))}
